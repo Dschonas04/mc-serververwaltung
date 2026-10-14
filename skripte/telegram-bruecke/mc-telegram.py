@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
-# Brücke zwischen dem Chat von studiserver4 und einer Telegram-Gruppe
+# Brücke zwischen dem Chat eines Minecraft-Servers und einer Telegram-Gruppe.
+# Umgebung: TG_TOKEN (Bot-Token), MC_DIR (Server-Verzeichnis), optional MC_NAME (Anzeigename),
+# STATE_DIR (Zustand: Chat-ID, Update-Stand). Den Bot in die Gruppe einladen; die erste Gruppe wird verbunden.
 import json, os, re, socket, struct, threading, time, urllib.request, urllib.parse
 
 MC = os.environ.get('MC_DIR', '/srv/minecraft')
 LOG = MC + '/logs/latest.log'
-STATE = '/var/lib/mc-telegram'
+STATE = os.environ.get('STATE_DIR', '/var/lib/mc-telegram')
+SERVER = os.environ.get('MC_NAME', 'dem Minecraft-Server')
 API = 'https://api.telegram.org/bot' + os.environ['TG_TOKEN'] + '/'
-NAME = r'(?:\d+\. )?([A-Za-z0-9_]{2,16})(?:\s+\d+ Tode)?'
+# Team-Präfixe und -Zusätze (z. B. '1. Name  12 Tode') um den Namen herum werden übersprungen
+NAME = r'(?:[^<>]*?\s)?([A-Za-z0-9_]{3,16})(?:\s[^<>]*)?'
 CHAT = re.compile(r'\[Server thread/INFO\]: <' + NAME + r'> (.*)$')
 JOIN = re.compile(r'\[Server thread/INFO\]: ' + NAME + r' joined the game$')
 LEFT = re.compile(r'\[Server thread/INFO\]: ' + NAME + r' left the game$')
@@ -78,7 +82,7 @@ def telegram_lesen():
             c = m.get('chat', {})
             if chat_id() is None and c.get('type') in ('group', 'supergroup'):
                 open(STATE + '/chat', 'w').write(str(c['id']))
-                senden('Verbunden mit studiserver4. Der Spiel-Chat erscheint hier, Nachrichten von hier gehen ins Spiel.')
+                senden(f'Verbunden mit {SERVER}. Der Spiel-Chat erscheint hier, Nachrichten von hier gehen ins Spiel.')
                 continue
             if c.get('id') != chat_id() or 'message' not in u: continue
             if u['message'].get('migrate_to_chat_id'):  # Gruppe wurde zur Supergruppe

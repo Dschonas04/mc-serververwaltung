@@ -1,4 +1,4 @@
-// Stumm: die Verwaltungs-Mod für studiserver4 (Stummschalten, Werkzeugwache, Log-Filter,
+// Stumm: die Verwaltungs-Mod für den Server (Stummschalten, Werkzeugwache, Log-Filter,
 // Spender-Ehrentafel). Wie Loot Scaler direkt gegen die lesbaren Namen von Minecraft 26.2
 // gebaut, ohne Mappings. Braucht die Bibliotheken aus tools/fetch-libs.sh in libs/.
 plugins {

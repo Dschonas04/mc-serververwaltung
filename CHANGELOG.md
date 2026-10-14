@@ -3,6 +3,20 @@
 Änderungen am Repo als Ganzem. Die Mods haben eigene Versionen; Loot Scaler führt
 zusätzlich [sein eigenes Changelog](mods/loot-scaler/CHANGELOG.md).
 
+## [2.1.0] - 2026-10-14
+
+### Geändert
+- Skripte sind jetzt allgemein: gemeinsame Bibliothek `mcwerkzeug.py`, Server-Verzeichnis über `--server`/`MC_DIR`,
+  RCON-Port und -Kennwort aus `server.properties`, keine festen Pfade, Namen oder Koordinaten mehr.
+- Bau-Skripte mit Parametern statt fester Orte: Marktviertel, Verkaufsbude (Stil Zelt oder Nether, beliebige Ware und
+  Preis), Hütte, Portalplatz, Teich, Weg, Begrünen, Ersetzen. Ausgabe als Datei, auf die Standardausgabe oder direkt
+  per RCON, Chunks werden dafür automatisch geladen.
+- `scan.py` (Höhenkarte, Bauwerke, kleine Wasserstellen) und `truhenlog.py` (ChestLogger) ersetzen die Einzelskripte.
+- Telegram-Brücke erkennt Spielernamen auch mit beliebigen Team-Präfixen und -Zusätzen.
+
+### Behoben
+- Der NBT-Leser las bei verschachtelten Einträgen den Wert vor dem Schlüssel.
+
 ## [2.0.0] - 2026-10-14
 
 ### Neu

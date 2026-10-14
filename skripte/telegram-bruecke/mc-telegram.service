@@ -1,14 +1,14 @@
 [Unit]
-Description=Brücke studiserver4-Chat <-> Telegram
+Description=Brücke Minecraft-Chat <-> Telegram
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Environment=MC_DIR=/srv/minecraft
-User=amp
+User=minecraft
 EnvironmentFile=/etc/mc-telegram.env
 StateDirectory=mc-telegram
-ExecStart=/usr/bin/python3 /opt/mc-telegram/mc-telegram.py
+ExecStart=/usr/bin/python3 /opt/mc-serververwaltung/skripte/telegram-bruecke/mc-telegram.py
 Restart=always
 RestartSec=10
 

@@ -1,8 +1,0 @@
-[Unit]
-Description=Chunky nur im Leerlauf (studiserver4)
-
-[Service]
-Environment=MC_DIR=/srv/minecraft
-Type=oneshot
-User=amp
-ExecStart=/usr/local/bin/chunky-leerlauf.py

@@ -1,13 +1,13 @@
 # mc-serververwaltung
 
-Alles, womit ich meinen Minecraft-Server **studiserver4** (Fabric, Minecraft 26.2) verwalte: eigene Server-Mods, Datenpakete und Skripte.
+Werkzeuge zum Verwalten eines Minecraft-Servers (Fabric, Minecraft 26.2): eigene Server-Mods, Datenpakete und Skripte.
 
 | Ordner | Inhalt |
 |---|---|
 | [`mods/loot-scaler`](mods/loot-scaler) | **Loot Scaler**: Erze und Mobs geben weniger Beute, Mengen statt Chancen (MIT, eigene [README](mods/loot-scaler/README.md)) |
 | [`mods/stumm`](mods/stumm) | **Stumm**: Verwaltungs-Mod, nur Server (siehe unten) |
 | [`datenpakete`](datenpakete) | Eigene Datenpakete der Welt |
-| [`skripte`](skripte) | RCON, Vorgenerierung im Leerlauf, Telegram-Brücke, Bau- und Analyseskripte |
+| [`skripte`](skripte) | Allgemeine Werkzeuge: RCON, Chunky im Leerlauf, Telegram-Brücke, Welt-Scans, ChestLogger-Auswertung, Bau-Skripte mit Parametern |
 
 ## Stumm
 

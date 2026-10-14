@@ -1,0 +1,8 @@
+[Unit]
+Description=Chunky-Vorgenerierung nur im Leerlauf
+
+[Service]
+Environment=MC_DIR=/srv/minecraft
+Type=oneshot
+User=minecraft
+ExecStart=/usr/bin/python3 /opt/mc-serververwaltung/skripte/chunky-leerlauf.py
