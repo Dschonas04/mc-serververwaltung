@@ -1,5 +1,6 @@
 import collections
-exec(open('/root/berg_lib.py').read().split("orig=World")[0])
+import os as _os; _HIER = _os.path.dirname(_os.path.abspath(__file__))
+exec(open(_HIER + '/berg_lib.py').read().split("orig=World")[0])
 W=set()
 for x in range(-96,96):
   for z in range(-96,96):

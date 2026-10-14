@@ -1,4 +1,4 @@
-# Create-Tierfarm fuer Dschonas04 (11.10.2026), x134-158 z-400..-376, Boden y95
+# Create-Tierfarm (11.10.2026), x134-158 z-400..-376, Boden y95
 kill @e[type=!player,x=134,y=94,z=-400,dx=24,dy=14,dz=24]
 fill 133 96 -401 159 115 -375 air
 fill 133 80 -401 159 94 -375 stone replace air

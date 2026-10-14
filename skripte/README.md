@@ -1,6 +1,6 @@
 # Skripte
 
-Laufen auf dem Server (vm-ubuntu-amp). Pfade sind auf die AMP-Instanz `villagernews01` zugeschnitten.
+Laufen auf dem Minecraft-Server. Das Server-Verzeichnis kommt aus der Umgebungsvariable `MC_DIR` (Vorgabe `/srv/minecraft`).
 Das RCON-Passwort liest jedes Skript selbst aus `server.properties`, im Repo steht keins.
 
 | Ordner | Inhalt |

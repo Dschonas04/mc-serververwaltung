@@ -1,4 +1,4 @@
-# Glas-Penthouse auf Stelzen fuer Dschonas04 (11.10.2026), x256-272 z-331..-315, Boden y131 ueber dem Tal
+# Glas-Penthouse auf Stelzen (11.10.2026), x256-272 z-331..-315, Boden y131 ueber dem Tal
 fill 255 131 -332 273 145 -314 air
 # ===== Stelzen (nur Luft wird ersetzt) =====
 fill 257 95 -316 257 129 -316 waxed_cut_copper replace air

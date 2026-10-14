@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 """Chunky nebenbei, aber nur so viel, wie der Server verkraftet.
 
 Misst die Tickzeit (/tick query). Laeuft der Server locker, rechnet Chunky
@@ -7,7 +8,7 @@ Spielen vorerzeugt, ohne dass es ruckelt. Kennwort und Port kommen aus
 server.properties, nie aus einer Befehlszeile."""
 import re, socket, struct, sys
 
-EIG = "/home/amp/.ampdata/instances/villagernews01/Minecraft/server.properties"
+EIG = os.environ.get("MC_DIR", "/srv/minecraft") + "/server.properties"
 # Schwellen in Millisekunden (Ziel sind 50 ms pro Tick)
 WEITER_MITTEL, WEITER_P95 = 25.0, 40.0   # darunter darf Chunky rechnen
 PAUSE_MITTEL, PAUSE_P95 = 32.0, 48.0     # darueber pausiert er

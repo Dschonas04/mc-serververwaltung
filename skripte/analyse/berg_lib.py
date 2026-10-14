@@ -3,7 +3,8 @@
 import sys, os, zlib, struct, collections
 
 sys.argv=[sys.argv[0]]
-exec(open('/root/scan-books.py').read().split('def books')[0])
+import os as _os; _HIER = _os.path.dirname(_os.path.abspath(__file__))
+exec(open(_HIER + '/scan-books.py').read().split('def books')[0])
 _tag=tag
 def tag(f, t):
     if t == 12:
@@ -49,8 +50,8 @@ class World:
         bits=max(4,(len(pal)-1).bit_length()); per=64//bits
         i=((y&15)*256+(z&15)*16+(x&15)); v=(arr[i//per]>>((i%per)*bits))&((1<<bits)-1)
         return pal[v]
-live=World('/home/amp/.ampdata/instances/villagernews01/Minecraft/world/dimensions/minecraft/overworld/region')
-orig=World('/root/regen')
+live=World(_os.environ.get('MC_DIR', '/srv/minecraft') + '/world/dimensions/minecraft/overworld/region')
+orig=World(_os.environ.get('REGEN_DIR', 'regen'))  # frisch erzeugte Vergleichswelt
 AIR=('minecraft:air','minecraft:cave_air')
 SOFT=('leaves','log','grass','flower','daisy','bluet','poppy','tulip','fern','bush','petals','snow','vine','sapling','short','tall','dandelion','azalea','moss_carpet','lilac','rose','peony')
 def surface(w, x, z):

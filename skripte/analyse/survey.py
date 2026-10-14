@@ -1,5 +1,6 @@
 import sys
-src=open('/root/berg_lib.py').read().split("orig=World")[0]
+import os as _os; _HIER = _os.path.dirname(_os.path.abspath(__file__))
+src=open(_HIER + '/berg_lib.py').read().split("orig=World")[0]
 exec(src)
 AIR=('minecraft:air','minecraft:cave_air','minecraft:void_air')
 import os; R=int(os.environ.get("R","48"))

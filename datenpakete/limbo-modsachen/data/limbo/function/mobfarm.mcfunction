@@ -1,4 +1,4 @@
-# Mobfarm von Dschonas04 verschoenern (11.10.2026) - nur Optik, Geometrie bleibt
+# Mobfarm verschoenern (11.10.2026) - nur Optik, Geometrie bleibt
 fill 380 148 -1402 410 210 -1374 deepslate_bricks replace stone
 fill 380 211 -1402 410 276 -1374 deepslate_bricks replace stone
 # Eckpfeiler Spawnturm

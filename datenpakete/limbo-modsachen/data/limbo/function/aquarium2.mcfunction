@@ -1,4 +1,4 @@
-# Grosses Aquarium im Boden fuer Dschonas04 (11.10.2026), x172-203 z-373..-333 y69-90
+# Grosses Aquarium im Boden (11.10.2026), x172-203 z-373..-333 y69-90
 fill 172 69 -373 203 90 -333 air
 fill 172 68 -373 203 68 -333 dark_prismarine
 fill 172 69 -373 203 89 -333 prismarine_bricks hollow

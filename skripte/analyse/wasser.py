@@ -1,5 +1,6 @@
 import collections
-exec(open('/root/berg_lib.py').read().split("orig=World")[0])
+import os as _os; _HIER = _os.path.dirname(_os.path.abspath(__file__))
+exec(open(_HIER + '/berg_lib.py').read().split("orig=World")[0])
 c=collections.Counter(); rows={}
 for z in range(-96,64,3):
   row=''

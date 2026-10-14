@@ -1,8 +1,9 @@
-import json,re,socket,struct,sys,collections
-exec(open('/root/rcon-s4.py').read().split('send(s, 2, 2')[0])
+import json,os,re,socket,struct,sys,collections
+import os as _os; _HIER = _os.path.dirname(_os.path.abspath(__file__))
+exec(open(_HIER + '/../server/rcon.py').read().split('send(s, 2, 2')[0])
 def cmd(c):
     send(s,9,2,c); return re.sub('§.','',recv(s)[2])
-D='/home/amp/.ampdata/instances/villagernews01/Minecraft'
+D=os.environ.get('MC_DIR', '/srv/minecraft')
 claims=json.load(open(D+'/world/chestlogger/claims.json'))['claims']
 def unpack(p):
     x=p>>38; z=(p>>12)&0x3FFFFFF; z=z-(1<<26) if z>=1<<25 else z; y=p&0xFFF; y=y-(1<<12) if y>=1<<11 else y

@@ -1,4 +1,4 @@
-# Modernes Haus fuer Dschonas04 (11.10.2026), Bauplatz x236-259 z-299..-276, Boden y131
+# Modernes Haus (11.10.2026), Bauplatz x236-259 z-299..-276, Boden y131
 fill 236 132 -299 259 150 -276 air
 # Terrasse/Grundplatte
 fill 237 131 -297 258 131 -277 smooth_stone

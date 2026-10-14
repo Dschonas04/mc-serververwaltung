@@ -1,4 +1,4 @@
-import socket, struct, sys
+import os, socket, struct, sys
 def recv(s):
     ln = struct.unpack('<i', s.recv(4))[0]
     data = b''
@@ -10,10 +10,14 @@ def send(s, rid, typ, body):
     d = struct.pack('<ii', rid, typ) + body.encode() + b'\x00\x00'
     s.sendall(struct.pack('<i', len(d)) + d)
 pw = ''
-for line in open('/home/amp/.ampdata/instances/villagernews01/Minecraft/server.properties'):
+port = 25575
+MC_DIR = os.environ.get('MC_DIR', '/srv/minecraft')  # Server-Verzeichnis (mit server.properties)
+for line in open(MC_DIR + '/server.properties'):
     if line.startswith('rcon.password='):
         pw = line.split('=',1)[1].strip()
-s = socket.create_connection(('127.0.0.1', 25577), timeout=10)
+    if line.startswith('rcon.port='):
+        port = int(line.split('=',1)[1].strip())
+s = socket.create_connection(('127.0.0.1', port), timeout=10)
 send(s, 1, 3, pw)
 rid,_,_ = recv(s)
 if rid == -1:

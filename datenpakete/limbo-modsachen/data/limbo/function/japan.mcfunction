@@ -1,4 +1,4 @@
-# Japanischer Garten mit Teehaus fuer Dschonas04 (11.10.2026), x254-279 z-335..-309, Boden y131
+# Japanischer Garten mit Teehaus (11.10.2026), x254-279 z-335..-309, Boden y131
 # ===== Penthouse entfernen =====
 fill 255 130 -332 273 145 -309 air
 fill 254 95 -335 279 129 -309 air replace waxed_cut_copper

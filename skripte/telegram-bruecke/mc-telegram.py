@@ -2,7 +2,7 @@
 # Brücke zwischen dem Chat von studiserver4 und einer Telegram-Gruppe
 import json, os, re, socket, struct, threading, time, urllib.request, urllib.parse
 
-MC = '/home/amp/.ampdata/instances/villagernews01/Minecraft'
+MC = os.environ.get('MC_DIR', '/srv/minecraft')
 LOG = MC + '/logs/latest.log'
 STATE = '/var/lib/mc-telegram'
 API = 'https://api.telegram.org/bot' + os.environ['TG_TOKEN'] + '/'

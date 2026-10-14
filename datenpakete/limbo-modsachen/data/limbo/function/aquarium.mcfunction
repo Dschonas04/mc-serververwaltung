@@ -1,4 +1,4 @@
-# Aquarium mit Glastunnel fuer Dschonas04 (11.10.2026), x180-199 z-303..-271, Boden y120
+# Aquarium mit Glastunnel (11.10.2026), x180-199 z-303..-271, Boden y120
 fill 176 121 -307 203 140 -267 air
 fill 176 110 -307 203 119 -267 stone replace air
 fill 176 120 -307 203 120 -267 polished_andesite
