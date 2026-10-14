@@ -9,8 +9,10 @@ LOG = MC + '/logs/latest.log'
 STATE = os.environ.get('STATE_DIR', '/var/lib/mc-telegram')
 SERVER = os.environ.get('MC_NAME', 'dem Minecraft-Server')
 API = 'https://api.telegram.org/bot' + os.environ['TG_TOKEN'] + '/'
-# Team-Präfixe und -Zusätze (z. B. '1. Name  12 Tode') um den Namen herum werden übersprungen
-NAME = r'(?:[^<>]*?\s)?([A-Za-z0-9_]{3,16})(?:\s[^<>]*)?'
+# Ranglisten-Teams schreiben z. B. '1. Name  12 Tode': nur dieses Muster (Platz vorn, Zahl + Wort hinten)
+# wird übersprungen. Freier Text davor ist nicht erlaubt, sonst ließen sich mit /say oder /me
+# ("[Bob] Steve joined the game") falsche Beitritts- oder Chatmeldungen erzeugen.
+NAME = r'(?:\d{1,3}\.\s+)?([A-Za-z0-9_]{3,16})(?:\s+\d+\s+\w+)?'
 CHAT = re.compile(r'\[Server thread/INFO\]: <' + NAME + r'> (.*)$')
 JOIN = re.compile(r'\[Server thread/INFO\]: ' + NAME + r' joined the game$')
 LEFT = re.compile(r'\[Server thread/INFO\]: ' + NAME + r' left the game$')

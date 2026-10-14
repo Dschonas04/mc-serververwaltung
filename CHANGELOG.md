@@ -12,7 +12,7 @@ zusätzlich [sein eigenes Changelog](mods/loot-scaler/CHANGELOG.md).
   Preis), Hütte, Portalplatz, Teich, Weg, Begrünen, Ersetzen. Ausgabe als Datei, auf die Standardausgabe oder direkt
   per RCON, Chunks werden dafür automatisch geladen.
 - `scan.py` (Höhenkarte, Bauwerke, kleine Wasserstellen) und `truhenlog.py` (ChestLogger) ersetzen die Einzelskripte.
-- Telegram-Brücke erkennt Spielernamen auch mit beliebigen Team-Präfixen und -Zusätzen.
+- Telegram-Brücke: Name, Token, Zustandsordner über Umgebungsvariablen; Spielernamen werden nur mit Ranglisten-Präfix („1. “) und -Zusatz („12 Tode“) erkannt, damit /say und /me keine falschen Meldungen erzeugen.
 
 ### Behoben
 - Der NBT-Leser las bei verschachtelten Einträgen den Wert vor dem Schlüssel.
