@@ -31,6 +31,7 @@ public final class Stumm implements ModInitializer {
         LogFilter.install();
         Werkzeugwache.register();
         Spender.register();
+        Hexenhuette.register();
         laden();
         ServerMessageEvents.ALLOW_CHAT_MESSAGE.register((message, sender, params) -> erlaubt(sender));
         ServerMessageEvents.ALLOW_COMMAND_MESSAGE.register((message, source, params) -> {

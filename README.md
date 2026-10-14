@@ -16,6 +16,7 @@ Werkzeuge zum Verwalten eines Minecraft-Servers (Fabric, Minecraft 26.2): eigene
 | Spieler stummschalten | `/stumm <Spieler>`, `/laut <Spieler>`, `/stumm liste` (Ops), Liste in `config/stumm.txt` |
 | Spender | `/spende <Spieler> <Euro>`, `/spende setzen`, `/spende entfernen`, `/spende liste` (Ops), `/spender` für alle; Daten in `config/spender.txt` |
 | Ehrentafel | schwebende Top-10-Spendertafel am Spawn (0.5 66.2 -8.5), Spender haben goldene Namen |
+| Hexenhütte | `/hexenhuette <x y z>` (Ops) legt an beliebiger Stelle eine Sumpfhütten-Struktur ohne Blöcke an (7 × 7 × 9, kleinste Ecke an der Stelle); darin erscheinen Hexen wie in einer echten Hütte |
 | Werkzeugwache | Log-Zeile `Werkzeugwache`, wenn einem Spieler ein Gegenstand mit Haltbarkeit aus dem Inventar verschwindet (Ort, Dimension, vermuteter Grund) |
 | Log-Filter | blendet die Spam-Meldung „Invalid entity rotation: NaN“ aus |
 
