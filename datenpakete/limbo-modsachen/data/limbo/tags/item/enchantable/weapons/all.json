@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  {
+   "id": "#minecraft:swords",
+   "required": false
+  },
+  {
+   "id": "#minecraft:axes",
+   "required": false
+  },
+  {
+   "id": "#minecraft:enchantable/bow",
+   "required": false
+  },
+  {
+   "id": "#minecraft:enchantable/crossbow",
+   "required": false
+  }
+ ]
+}

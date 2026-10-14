@@ -1,1 +1,4 @@
-rootProject.name = 'loot-scaler'
+rootProject.name = 'mc-serververwaltung'
+
+include 'mods:loot-scaler'
+include 'mods:stumm'

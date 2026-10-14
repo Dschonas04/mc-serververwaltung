@@ -1,0 +1,276 @@
+{
+ "values": [
+  "minecraft:zombie",
+  "minecraft:husk",
+  "minecraft:drowned",
+  "minecraft:zombie_villager",
+  "minecraft:skeleton",
+  "minecraft:stray",
+  "minecraft:bogged",
+  "minecraft:wither_skeleton",
+  "minecraft:creeper",
+  "minecraft:spider",
+  "minecraft:cave_spider",
+  "minecraft:silverfish",
+  "minecraft:endermite",
+  "minecraft:slime",
+  "minecraft:magma_cube",
+  "minecraft:blaze",
+  "minecraft:ghast",
+  "minecraft:enderman",
+  "minecraft:witch",
+  "minecraft:phantom",
+  "minecraft:pillager",
+  "minecraft:vindicator",
+  "minecraft:evoker",
+  "minecraft:vex",
+  "minecraft:ravager",
+  "minecraft:illusioner",
+  "minecraft:hoglin",
+  "minecraft:zoglin",
+  "minecraft:piglin_brute",
+  "minecraft:warden",
+  "minecraft:breeze",
+  "minecraft:creaking",
+  "minecraft:guardian",
+  "minecraft:elder_guardian",
+  "minecraft:shulker",
+  "minecraft:zombified_piglin",
+  {
+   "id": "aerialhell:crystal_golem",
+   "required": false
+  },
+  {
+   "id": "aerialhell:shadow_tree",
+   "required": false
+  },
+  {
+   "id": "aerialhell:mummy",
+   "required": false
+  },
+  {
+   "id": "aerialhell:chained_god",
+   "required": false
+  },
+  {
+   "id": "deeper_dark:sculk_creeper",
+   "required": false
+  },
+  {
+   "id": "deeper_dark:shriek_worm",
+   "required": false
+  },
+  {
+   "id": "moogs_voyager_structures:none",
+   "required": false
+  },
+  {
+   "id": "millager:archer",
+   "required": false
+  },
+  {
+   "id": "millager:breacher",
+   "required": false
+  },
+  {
+   "id": "millager:doctor",
+   "required": false
+  },
+  {
+   "id": "millager:lancer",
+   "required": false
+  },
+  {
+   "id": "millager:mauler",
+   "required": false
+  },
+  {
+   "id": "millager:rioter",
+   "required": false
+  },
+  {
+   "id": "millager:scouter",
+   "required": false
+  },
+  {
+   "id": "millager:swordmaster",
+   "required": false
+  },
+  {
+   "id": "mutantszombies:blister_zombie",
+   "required": false
+  },
+  {
+   "id": "mutantszombies:crawler",
+   "required": false
+  },
+  {
+   "id": "mutantszombies:mutant_brute",
+   "required": false
+  },
+  {
+   "id": "mutantszombies:rotten_mutant",
+   "required": false
+  },
+  {
+   "id": "mutantszombies:spitter",
+   "required": false
+  },
+  {
+   "id": "mutantszombies:split_head_zombie",
+   "required": false
+  },
+  {
+   "id": "mutantszombies:zombie_brute",
+   "required": false
+  },
+  {
+   "id": "deeper_dark:boss",
+   "required": false
+  },
+  {
+   "id": "aerialhell:aerial_tree_mimic",
+   "required": false
+  },
+  {
+   "id": "aerialhell:copper_pine_mimic",
+   "required": false
+  },
+  {
+   "id": "aerialhell:crystal_slime",
+   "required": false
+  },
+  {
+   "id": "aerialhell:crystal_spider",
+   "required": false
+  },
+  {
+   "id": "aerialhell:electro_spirit",
+   "required": false
+  },
+  {
+   "id": "aerialhell:evil_cow",
+   "required": false
+  },
+  {
+   "id": "aerialhell:fat_phantom",
+   "required": false
+  },
+  {
+   "id": "aerialhell:fire_spirit",
+   "required": false
+  },
+  {
+   "id": "aerialhell:ghost_slime_ninja_pirate",
+   "required": false
+  },
+  {
+   "id": "aerialhell:ghost_slime_pirate",
+   "required": false
+  },
+  {
+   "id": "aerialhell:golden_beech_mimic",
+   "required": false
+  },
+  {
+   "id": "aerialhell:hell_spider",
+   "required": false
+  },
+  {
+   "id": "aerialhell:ice_spirit",
+   "required": false
+  },
+  {
+   "id": "aerialhell:lilith",
+   "required": false
+  },
+  {
+   "id": "aerialhell:lunatic_priest",
+   "required": false
+  },
+  {
+   "id": "aerialhell:mud_cycle_mage",
+   "required": false
+  },
+  {
+   "id": "aerialhell:mud_golem",
+   "required": false
+  },
+  {
+   "id": "aerialhell:mud_soldier",
+   "required": false
+  },
+  {
+   "id": "aerialhell:mud_spectral_cycle_mage",
+   "required": false
+  },
+  {
+   "id": "aerialhell:mud_spectral_golem",
+   "required": false
+  },
+  {
+   "id": "aerialhell:mud_spectral_soldier",
+   "required": false
+  },
+  {
+   "id": "aerialhell:shadow_automaton",
+   "required": false
+  },
+  {
+   "id": "aerialhell:shadow_flying_skull",
+   "required": false
+  },
+  {
+   "id": "aerialhell:shadow_pine_mimic",
+   "required": false
+  },
+  {
+   "id": "aerialhell:shadow_spider",
+   "required": false
+  },
+  {
+   "id": "aerialhell:shadow_troll",
+   "required": false
+  },
+  {
+   "id": "aerialhell:shroomboom",
+   "required": false
+  },
+  {
+   "id": "aerialhell:sky_cactus_fiber_mimic",
+   "required": false
+  },
+  {
+   "id": "aerialhell:slime_ninja_pirate",
+   "required": false
+  },
+  {
+   "id": "aerialhell:slime_pirate",
+   "required": false
+  },
+  {
+   "id": "aerialhell:stellar_stone_automaton",
+   "required": false
+  },
+  {
+   "id": "aerialhell:torn_spirit",
+   "required": false
+  },
+  {
+   "id": "aerialhell:venomous_snake",
+   "required": false
+  },
+  {
+   "id": "aerialhell:verdigris_zombie",
+   "required": false
+  },
+  {
+   "id": "aerialhell:volucite_golem",
+   "required": false
+  },
+  {
+   "id": "aerialhell:volucite_warden",
+   "required": false
+  }
+ ]
+}

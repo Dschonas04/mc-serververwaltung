@@ -1,7 +1,7 @@
 // Minecraft 26.2 ships with readable class names, so this mod is compiled straight
 // against the server jar — no mappings, no remapping step, plain Gradle.
 //
-//   gradle build -Pminecraft_jar=/path/to/server-26.2.jar
+//   gradle :mods:loot-scaler:build -Pminecraft_jar=/path/to/server-26.2.jar
 //
 // The jar it produces goes into the mods directory as it is.
 plugins {
@@ -17,7 +17,7 @@ repositories {
     maven { name = 'Minecraft libraries'; url = 'https://libraries.minecraft.net' }
 }
 
-def minecraftJar = file(project.findProperty('minecraft_jar') ?: 'libs/server.jar')
+def minecraftJar = file(project.findProperty('minecraft_jar') ?: rootProject.file('libs/server.jar'))
 
 dependencies {
     compileOnly files(minecraftJar)
@@ -56,7 +56,7 @@ processResources {
 
 jar {
     archiveBaseName = project.archives_base_name
-    from('LICENSE') { rename { "${it}_${project.archives_base_name}" } }
+    from(rootProject.file('LICENSE')) { rename { "${it}_${project.archives_base_name}" } }
     manifest {
         attributes 'Implementation-Title': 'Loot Scaler',
                    'Implementation-Version': project.version

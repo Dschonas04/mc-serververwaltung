@@ -1,0 +1,13 @@
+{
+ "pack": {
+  "description": "Kein Monster im Umkreis von 160 Bloecken um den Spawn",
+  "min_format": [
+   107,
+   0
+  ],
+  "max_format": [
+   107,
+   1
+  ]
+ }
+}

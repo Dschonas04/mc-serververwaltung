@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Fetches into libs/ what the build needs but the repository must not carry:
-# the Minecraft server jar from Mojang and the Fabric API modules the mod
-# compiles against, from the Fabric maven. Used by CI and for a fresh clone.
+# Holt nach libs/, was der Bau braucht, aber nicht ins Repo gehört: das
+# Minecraft-Server-Jar von Mojang (libs/server.jar), die darin gebündelten
+# Bibliotheken (libs/mc/) und die Fabric-API-Module (libs/fabric/).
+# Für CI und frische Klone.
 #
 #   tools/fetch-libs.sh
 set -euo pipefail
@@ -10,7 +11,7 @@ cd "$(dirname "$0")/.."
 mc="$(sed -n 's/^minecraft_version=//p' gradle.properties)"
 api="$(sed -n 's/^fabric_api_version=//p' gradle.properties)"
 modules="$(sed -n 's/^fabric_api_modules=//p' gradle.properties)"
-mkdir -p libs
+mkdir -p libs/mc libs/fabric
 work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT
 
@@ -25,8 +26,13 @@ if [ ! -f libs/server.jar ]; then
   python3 - "$work/bundle.jar" "$mc" <<'PY'
 import sys, zipfile, shutil
 bundle, mc = sys.argv[1], sys.argv[2]
-with zipfile.ZipFile(bundle) as z, z.open(f"META-INF/versions/{mc}/server-{mc}.jar") as src, open("libs/server.jar", "wb") as dst:
-    shutil.copyfileobj(src, dst)
+with zipfile.ZipFile(bundle) as z:
+    with z.open(f"META-INF/versions/{mc}/server-{mc}.jar") as src, open("libs/server.jar", "wb") as dst:
+        shutil.copyfileobj(src, dst)
+    for name in z.namelist():
+        if name.startswith("META-INF/libraries/") and name.endswith(".jar"):
+            with z.open(name) as src, open("libs/mc/" + name.rsplit("/", 1)[1], "wb") as dst:
+                shutil.copyfileobj(src, dst)
 PY
 fi
 
@@ -43,9 +49,10 @@ with zipfile.ZipFile(api) as z:
         fname = name.rsplit("/", 1)[1]
         for module in wanted:
             if fname.startswith(module + "-"):
-                with open(f"libs/{module}.jar", "wb") as dst:
+                with open(f"libs/fabric/{module}.jar", "wb") as dst:
                     dst.write(z.read(name))
-                print("  libs/" + module + ".jar")
+                print("  libs/fabric/" + module + ".jar")
 PY
 fi
-ls -l libs
+ls -l libs libs/fabric
+echo "libs/mc: $(ls libs/mc | wc -l) Jars"

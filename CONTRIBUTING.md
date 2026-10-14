@@ -1,10 +1,10 @@
 # Contributing
 
-Thanks for wanting to improve Loot Scaler.
+Thanks for wanting to improve the mods in this repository.
 
 ## Reporting bugs
 
-Open an [issue](https://github.com/Dschonas04/loot-scaler/issues/new/choose) with
+Open an [issue](https://github.com/Dschonas04/mc-serververwaltung/issues/new/choose) with
 the mod, Minecraft and Fabric Loader versions and the relevant part of
 `logs/latest.log`.
 
@@ -15,7 +15,7 @@ against the server jar, without Loom or mappings. You need Java 25 and Gradle.
 
 ```bash
 tools/fetch-libs.sh   # server jar from Mojang into libs/
-gradle build          # jar in build/libs/
+gradle build          # jars in mods/*/build/libs/
 ```
 
 `libs/` is ignored by git: the Minecraft jar must not be redistributed.
@@ -29,7 +29,7 @@ gradle build          # jar in build/libs/
 
 ## Releases
 
-Bump `mod_version` in `gradle.properties`, move the "Unreleased" notes to a
+Bump `mod_version` in `mods/<mod>/gradle.properties`, move the "Unreleased" notes to a
 new version in CHANGELOG.md, tag `v<version>` and push the tag. The build
 workflow publishes the release with the jar.
 

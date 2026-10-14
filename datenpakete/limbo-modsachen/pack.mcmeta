@@ -1,0 +1,13 @@
+{
+ "pack": {
+  "description": "Limbo-Verzauberungen auch fuer Aerial Hell und andere Mod-Ausruestung",
+  "min_format": [
+   107,
+   0
+  ],
+  "max_format": [
+   107,
+   1
+  ]
+ }
+}

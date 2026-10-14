@@ -1,0 +1,7 @@
+[Unit]
+Description=Chunky nur im Leerlauf (studiserver4)
+
+[Service]
+Type=oneshot
+User=amp
+ExecStart=/usr/local/bin/chunky-leerlauf.py

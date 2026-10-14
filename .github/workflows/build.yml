@@ -1,7 +1,7 @@
 name: Build
 
-# Builds the mod on every push and pull request. A tag v* (or a manual run
-# with a tag) also publishes a GitHub release with the jar and the matching
+# Builds both mods on every push and pull request. A tag v* (or a manual run
+# with a tag) also publishes a GitHub release with the jars and the matching
 # section of CHANGELOG.md.
 
 on:
@@ -38,8 +38,8 @@ jobs:
         run: gradle build --no-daemon
       - uses: actions/upload-artifact@v7
         with:
-          name: loot-scaler
-          path: build/libs/*.jar
+          name: mods
+          path: mods/*/build/libs/*.jar
 
   release:
     needs: build
@@ -53,7 +53,7 @@ jobs:
           ref: ${{ inputs.tag || github.ref }}
       - uses: actions/download-artifact@v8
         with:
-          name: loot-scaler
+          name: mods
           path: dist
       - name: Release
         env:
@@ -64,8 +64,9 @@ jobs:
           # the section of CHANGELOG.md for this version, without its heading
           awk -v v="$version" '/^## /{p = index($0, "[" v "]") > 0; next} p && !/^\[[^]]*\]: /' CHANGELOG.md > notes.md
           [ -s notes.md ] || echo "See CHANGELOG.md." > notes.md
+          jars=$(find dist -name '*.jar' ! -name '*-sources.jar')
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" dist/loot-scaler-"$version".jar --clobber
+            gh release upload "$TAG" $jars --clobber
           else
-            gh release create "$TAG" dist/loot-scaler-"$version".jar --title "Loot Scaler $version" --notes-file notes.md
+            gh release create "$TAG" $jars --title "Serververwaltung $version" --notes-file notes.md
           fi
